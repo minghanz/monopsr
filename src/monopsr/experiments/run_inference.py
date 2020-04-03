@@ -3,6 +3,9 @@ import os
 
 import tensorflow as tf
 
+import sys
+script_path = os.path.dirname(__file__)
+sys.path.append(os.path.join(script_path, '../..'))
 import monopsr
 from monopsr.builders.dataset_builder import DatasetBuilder
 from monopsr.core import config_utils
@@ -25,7 +28,7 @@ def main(_):
     default_ckpt_num = 'all'
     default_data_split = 'val'
     default_det_2d_score_thr = [0.2, 0.2, 0.2]
-    default_device = '0'
+    default_device = '1'
 
     parser.add_argument('--checkpoint_name',
                         type=str,
@@ -62,8 +65,11 @@ def main(_):
     experiment_config = args.checkpoint_name + '.yaml'
 
     # Read the config from the experiment folder
-    experiment_config_path = monopsr.data_dir() + '/outputs/' + \
-                             args.checkpoint_name + '/' + experiment_config
+    # experiment_config_path = monopsr.data_dir() + '/outputs/' + \
+    #                          args.checkpoint_name + '/' + experiment_config
+
+    # experiment_config_path = 'src/monopsr/configs/' + experiment_config
+    experiment_config_path = monopsr.root_dir() + '/configs/' + experiment_config
 
     config = config_utils.parse_yaml_config(experiment_config_path)
 

@@ -3,6 +3,9 @@ import sys
 
 import cv2
 import numpy as np
+
+script_path = os.path.dirname(__file__)
+sys.path.append(os.path.join(script_path, '../../src'))
 from monopsr.builders.dataset_builder import DatasetBuilder
 
 from monopsr.core import box_3d_encoder

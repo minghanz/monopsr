@@ -36,7 +36,7 @@ dataset_config:
         box_jitter_type: 'oversample'  # 'oversample', 'oversample_gt', 'all', !!null
 
     name: 'kitti'
-    dataset_dir: '~/Kitti/object'
+    dataset_dir: '/media/sda1/datasets/kitti/object'
     data_split: 'train'
     data_split_dir: 'training'
     has_kitti_labels: True
@@ -58,7 +58,7 @@ model_config:
     centroid_type: 'middle'  # 'bottom' 'middle'
 
     # Resize image to reduce memory for nets that have full image as input
-    resized_full_img_shape: [160, 608]
+    resized_full_img_shape: [80, 304]
 
     # Net type
     net_type: 'resnet101_4x_squash'

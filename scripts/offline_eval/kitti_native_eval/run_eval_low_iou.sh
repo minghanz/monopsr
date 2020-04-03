@@ -18,4 +18,4 @@ results_dir=$6
 
 cd ${eval_script_dir}
 #echo "${global_step}" | tee -a ${results_dir}/${checkpoint_name}_results_low_iou_${score_threshold}.txt
-./evaluate_object_3d_offline_low_iou ~/Kitti/object/training/label_2/ ${prediction_dir} | tee -a ${results_dir}/${checkpoint_name}_results_low_iou_${score_threshold}.txt
+./evaluate_object_3d_offline_low_iou /media/sda1/datasets/kitti/object/training/label_2/ ${prediction_dir} | tee -a ${results_dir}/${checkpoint_name}_results_low_iou_${score_threshold}.txt

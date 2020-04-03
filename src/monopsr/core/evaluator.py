@@ -126,7 +126,7 @@ class Evaluator:
 
         # Add maximum memory usage summary op
         # This op can only be run on device with gpu so it's skipped on Travis
-        if 'TRAVIS' not in os.environ:
+        if 'TRAVIS' not in os.environ and os.environ['CUDA_VISIBLE_DEVICES']==0:
             # tf 1.4
             tf.summary.scalar('bytes_in_use',
                               tf.contrib.memory_stats.BytesInUse())
@@ -410,7 +410,7 @@ class Evaluator:
 
         if self.skip_evaluated_checkpoints:
             already_evaluated_ckpts = self.get_evaluated_ckpts()
-        ckpt_indices = np.asarray([ckpt_indices])
+        ckpt_indices = np.asarray(ckpt_indices)
         if ckpt_indices is not None:
             if ckpt_indices[0] == -1:
                 # Restore the most recent checkpoint

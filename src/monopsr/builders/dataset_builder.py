@@ -43,7 +43,7 @@ class DatasetBuilder:
             box_jitter_type: 'oversample'  # 'oversample', 'all', !!null
 
         name: 'kitti'
-        dataset_dir: '~/Kitti/object'
+        dataset_dir: '/media/sda1/datasets/kitti/object'
         data_split: 'train'
         data_split_dir: 'training'
         has_kitti_labels: True

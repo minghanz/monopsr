@@ -2,12 +2,11 @@ coverage
 matplotlib
 nose
 numpy
-opencv-python
+opencv
 pandas
 pillow
 pypng
 pyyaml
 scipy
 scikit-image
-sklearn
-tensorflow-gpu==1.8
+scikit-learn

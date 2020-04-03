@@ -3,6 +3,9 @@ import os
 
 import tensorflow as tf
 
+import sys
+script_path = os.path.dirname(__file__)
+sys.path.append(os.path.join(script_path, '../..'))
 import monopsr
 from monopsr.core import config_utils
 from monopsr.core.models.monopsr.monopsr_model import MonoPSRModel
@@ -16,7 +19,7 @@ def main(_):
     default_config_path = monopsr.root_dir() + '/configs/monopsr_model_000.yaml'
 
     default_data_split = 'val'
-    default_device = '0'
+    default_device = '1'
 
     parser.add_argument('--config_path',
                         type=str,

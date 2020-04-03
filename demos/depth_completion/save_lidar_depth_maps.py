@@ -4,6 +4,8 @@ import time
 
 import numpy as np
 
+script_path = os.path.dirname(__file__)
+sys.path.append(os.path.join(script_path, '../../src'))
 from ip_basic import ip_basic
 from monopsr.builders.dataset_builder import DatasetBuilder
 from monopsr.datasets.kitti import obj_utils, calib_utils, depth_map_utils

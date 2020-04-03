@@ -995,7 +995,7 @@ int32_t main (int32_t argc,char *argv[]) {
     //mail->msg("Your evaluation results are available at:");
     //mail->msg(result_dir.c_str());
   } else {
-    system(("rm -r " + result_dir + "/plot").c_str());
+    system(("rm -r " + result_dir + "/plot_low_iou").c_str());
     mail->msg("An error occured while processing your results.");
   }
 
